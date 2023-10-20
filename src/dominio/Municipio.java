@@ -1,4 +1,4 @@
-package dominio.*;
+package dominio;
 import java.util.*;
 
 public class Municipio{
@@ -9,16 +9,28 @@ public class Municipio{
 		this.nombre = nombre;
 		localidades = new ArrayList<Localidad>();
 	}
-	public Municipio addLocalidad(Localidad l){
+	public Municipio() {
+    }
+    public Municipio addLocalidad(Localidad l){
 		localidades.add(l);
 		return this;
 	}
 
 public String toString(){
-	String cad = "Localidad: "+nombre+" Municipio: /n ";
-	for(Localidad l: localidades)
-		cadt = l+"/n"
-}
 
+	String cad = "Localidad: "+nombre+" Municipio: "+"/n" ;
+	for(Localidad l: localidades)
+		cad = l+"/n";
+		return cad;
+
+}
+	public int getPoblacion(){
+
+		int total = 0;
+	
+		for(Localidad l: localidades)
+		total += l.getPoblacion();
+		return total;
+	}
 
 }
