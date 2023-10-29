@@ -1,8 +1,16 @@
 
 package presentacion;
-import dominio.*;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import dominio.Localidad;
+import dominio.Municipio;
+import dominio.Provincia;
 public class InterfazUsuario {
 
     private  ArrayList<Provincia> provincias;
@@ -42,7 +50,7 @@ public class InterfazUsuario {
             else if (p[0].equals("list"))
                     System.out.println (provincias);
             else if (p[0].equals("help"))
-                    System.out.println("introduzca ua de las siguientes peticiones: \n addProvindia: añadir provincia\n addMunicipio: añadir Municipio\n addLocalidad: añadir Localidad\n list: listar el contenido\n read: lectura inicial\n exit: salir\n");
+                    System.out.println("introduzca una de las siguientes peticiones: \n addProvincia: añadir provincia\n addMunicipio: añadir Municipio\n addLocalidad: añadir Localidad\n list: listar el contenido\n read: lectura inicial\n exit: salir\n");
             else if (p[0].equals("exit")){
                     grabar();
                     return false;
